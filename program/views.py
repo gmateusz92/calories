@@ -13,7 +13,8 @@ def index(request):
         foods = Food.objects.all()
     else:
         foods = Food.objects.all()
-    return render(request, 'index.html', {'foods': foods})
+    consumed_food = Consume.objects.filter(user=request.user)
+    return render(request, 'index.html', {'foods': foods, 'consumed_food': consumed_food})
 
 
 def delete_consume(request, id):
