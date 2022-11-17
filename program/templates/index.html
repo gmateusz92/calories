@@ -54,3 +54,61 @@
 {% for c in consumed_food %}
 {{ c.food_consumed.name }} --> {{ c.food_consumed.carbs}} --> {{ c.food_consumed.protein }} --> {{ c.food_consumed.fats }} --> {{ c.food_consumed.calories }} </br>
 {% endfor %}
+
+{{ user }} {{ food.food }} {{ consumed }}
+
+{% for x in food %}
+{{ x.name }}
+{% endfor %}
+
+{% for x in consumed %}
+{{ x.food }}
+{% endfor %}
+
+{% for food in foods %}
+{{ food.name }}
+{% endfor %}
+
+{{ total }}
+{{ carb_total }}
+
+<br>
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Carbs</th>
+      <th scope="col">Proteins</th>
+      <th scope="col">Fats</th>
+      <th scope="col">Calories</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th scope="row">1</th>
+        {% for item in foods %}
+      <td>{{ item.name }}</td>
+        <td>{{ item.name }}</td>
+        {% endfor %}
+    </tr>
+
+  {% for item in foods %}
+    <tr>
+      <th scope="row">2</th>
+      <td>{{ item.carbs }}</td>
+    </tr>
+  {% endfor %}
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Ldd</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+</div>
