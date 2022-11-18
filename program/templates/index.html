@@ -73,11 +73,11 @@
 {{ carb_total }}
 
 <br>
-<div class="table-responsive">
+<div class="table table-bordered">
 <table class="table">
   <thead>
-    <tr>
-      <th scope="col">#</th>
+    <tr class="table-danger">
+
       <th scope="col">Name</th>
       <th scope="col">Carbs</th>
       <th scope="col">Proteins</th>
@@ -87,25 +87,27 @@
   </thead>
   <tbody>
 
+{% for item in consumed_food %}
     <tr>
-      <th scope="row">1</th>
-        {% for item in foods %}
-      <td>{{ item.name }}</td>
-        <td>{{ item.name }}</td>
-        {% endfor %}
+      <th scope="row">{{ item.food_consumed.name }}</th>
+      <td>{{ item.food_consumed.carbs }}</td>
+      <td>{{ item.food_consumed.protein }}</td>
+      <td>{{ item.food_consumed.fats }}</td>
+      <td>{{ item.food_consumed.calories }}</td>
+
+    </tr>
+{% endfor %}
+
+    <tr>
+
+      <th scope="row">total</th>
+      <td>{{ carb_total }}</td>
+      <td></td>
+      <td></td>
+      <td>{{ total }}</td>
     </tr>
 
-  {% for item in foods %}
-    <tr>
-      <th scope="row">2</th>
-      <td>{{ item.carbs }}</td>
-    </tr>
-  {% endfor %}
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Ldd</td>
-      <td>@twitter</td>
-    </tr>
+
   </tbody>
 </table>
 

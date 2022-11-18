@@ -12,23 +12,23 @@ def index(request):
         consume.save()
         foods = Food.objects.all()
 
-        # consumed = Consume.objects.all()
-        #
-        # cal_querysetConsumed = []
-        # for item in consumed:
-        #     cal_querysetConsumed.append(item.food_consumed.calories)
-        # qsc = cal_querysetConsumed
-        # total = 0
-        # for item in qsc:
-        #     total = item + total
+        consumed = Consume.objects.all()
 
-        # carb_querysetConsumed = []
-        # for item in consumed:
-        #     carb_querysetConsumed.append(item.food_consumed.carbs)
-        # qsc = carb_querysetConsumed
-        # carb_total = 0
-        # for item in qsc:
-        #     carb_total = item + carb_total
+        cal_querysetConsumed = []
+        for item in consumed:
+            cal_querysetConsumed.append(item.food_consumed.calories)
+        qsc = cal_querysetConsumed
+        total = 0
+        for item in qsc:
+            total = item + total
+
+        carb_querysetConsumed = []
+        for item in consumed:
+            carb_querysetConsumed.append(item.food_consumed.carbs)
+        qsc = carb_querysetConsumed
+        carb_total = 0
+        for item in qsc:
+            carb_total = item + carb_total
 
     else:
         foods = Food.objects.all()
